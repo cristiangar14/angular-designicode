@@ -1,2 +1,14 @@
-<h1>Detalle de usuario</h1>
-<h2>Este es el detalle del usuario id: {{id}} </h2>
+<div class="row" *ngIf="currentrUsers">
+  <div class="col-12">
+    <h1 class="text-success my-5">DETALLE DE USUARIO</h1>
+  </div>
+  <div class="col-12 col-md-6 col-xl-3 mb-4 text-center">
+    <img class="cgc-user-img" src="{{currentrUsers.avatar}}" alt="">
+  </div>
+  <div class="col-12 col-md-6 col-xl-9 ps-4">
+    <h2 class="text-primary border-bottom pb-3">Detalle de {{currentrUsers.name}}</h2>
+    <h3 class="text-secondary">Edad: {{currentrUsers.age}}</h3>
+    <h3 class="text-secondary border-bottom pb-3">Puesto: {{currentrUsers.work ?? 'Sin empleo'}}</h3>
+    <p>{{currentrUsers.description}}</p>
+  </div>
+</div>
