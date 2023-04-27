@@ -4,7 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import * as fromComponents from './components';
-import { TitleH1Component } from './components/title-h1/title-h1.component';
+import { TitleH1Component } from './components/titles/title-h1/title-h1.component';
+import { CardUserComponent } from './components/cards/card-user/card-user.component';
 
 @NgModule({
   imports: [
