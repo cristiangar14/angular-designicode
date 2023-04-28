@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { USERS_DATA } from '@data/constants/users.const';
+import { UserService } from '@data/services/api/user.service';
 
 import { ICardUser } from '@shared/components/cards/card-user/icard-user.metadata';
 
@@ -8,9 +9,21 @@ import { ICardUser } from '@shared/components/cards/card-user/icard-user.metadat
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent {
-  public users: ICardUser[] = USERS_DATA;
+export class UserListComponent{
+  public users: ICardUser[] | null = null;
   public text: string = 'Lista de usuarios';
   public type: string =  'primary';
+
+  constructor(
+    private userService: UserService
+  ){
+    this.userService.getAllUsers().subscribe({
+      next: (resp) => {
+        if (!resp.error) {
+          this.users = resp.data;
+        }
+      }
+    })
+  }
 
 }
