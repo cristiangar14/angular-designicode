@@ -7,6 +7,7 @@ import * as fromComponents from './components';
 import { TitleH1Component } from './components/titles/title-h1/title-h1.component';
 import { CardUserComponent } from './components/cards/card-user/card-user.component';
 import { RouterModule } from '@angular/router';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   imports: [
