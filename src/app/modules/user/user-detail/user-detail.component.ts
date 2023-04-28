@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { USERS_DATA } from '@data/constants/users.const';
+import { UserService } from '@data/services/api/user.service';
 import { ICardUser } from '@shared/components/cards/card-user/icard-user.metadata';
 
 @Component({
@@ -8,16 +9,23 @@ import { ICardUser } from '@shared/components/cards/card-user/icard-user.metadat
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss']
 })
-export class UserDetailComponent{
+export class UserDetailComponent implements OnInit{
   public id: number;
-  public users: ICardUser[] = USERS_DATA;
-  public currentrUsers: ICardUser | null;
+  public currentrUser: ICardUser | null = null;
   constructor(
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
+      private userService: UserService
     ){
       this.id = +this.route.snapshot.params['id'];
-      this.currentrUsers = this.users.find((user) => user.id === this.id ) || null;
     }
+
+  ngOnInit(): void {
+    this.userService.getUserById(this.id).subscribe({
+      next: (resp) => {
+        this.currentrUser = resp.data;
+      }
+    })
+  }
 
 
 }

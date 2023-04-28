@@ -1,14 +1,23 @@
-<div class="row" *ngIf="currentrUsers">
+<div class="row">
   <div class="col-12">
     <h1 class="text-success my-5">DETALLE DE USUARIO</h1>
   </div>
-  <div class="col-12 col-md-6 col-xl-3 mb-4 text-center">
-    <img class="cgc-user-img" src="{{currentrUsers.avatar}}" alt="">
+  <div class="col-12" *ngIf="currentrUser; else loaderComponent">
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-3 mb-4 text-center">
+        <img class="cgc-user-img" src="{{currentrUser.avatar}}" alt="">
+      </div>
+      <div class="col-12 col-md-6 col-xl-9 ps-4">
+        <h2 class="text-primary border-bottom pb-3">Detalle de {{currentrUser.name}}</h2>
+        <h3 class="text-secondary">Edad: {{currentrUser.age}}</h3>
+        <h3 class="text-secondary border-bottom pb-3">Puesto: {{currentrUser.work ?? 'Sin empleo'}}</h3>
+        <p>{{currentrUser.description}}</p>
+      </div>
+    </div>
   </div>
-  <div class="col-12 col-md-6 col-xl-9 ps-4">
-    <h2 class="text-primary border-bottom pb-3">Detalle de {{currentrUsers.name}}</h2>
-    <h3 class="text-secondary">Edad: {{currentrUsers.age}}</h3>
-    <h3 class="text-secondary border-bottom pb-3">Puesto: {{currentrUsers.work ?? 'Sin empleo'}}</h3>
-    <p>{{currentrUsers.description}}</p>
-  </div>
+  <ng-template #loaderComponent>
+    <div class="col-12 text-center">
+      <h6 class="my-5">Cargando...</h6>
+    </div>
+  </ng-template>
 </div>
