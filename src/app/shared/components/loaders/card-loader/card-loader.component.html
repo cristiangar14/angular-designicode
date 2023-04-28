@@ -1,1 +1,7 @@
-<p>card-loader works!</p>
+<div class="cgc-card-loader">
+  <div class="cgc-card-loader__img" [ngStyle]="finalStyleImage"></div>
+  <div
+    *ngFor="let item of totalBars"
+    class="cgc-card-loader__text"
+    [ngStyle]="{'height': finalHeightBar, 'width': item.width}"></div>
+</div>
