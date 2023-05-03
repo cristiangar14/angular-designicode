@@ -17,10 +17,20 @@ export class UserListComponent{
   public text: string = 'Lista de usuarios';
   public type: string =  'primary';
   public tasks = [
-    'primer tarea',
-    'segunda tarea',
-    'tercer tarea',
-    'cuarta tarea',
+    {
+      title: 'primer tarea',
+    },
+    {
+      title: 'segunda tarea',
+    },
+    {
+      title: 'tercer tarea',
+    },
+    {
+      title: 'cuarta tarea',
+    },
+
+
   ]
 
   constructor(
