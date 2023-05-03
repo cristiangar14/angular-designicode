@@ -16,6 +16,12 @@ export class UserListComponent{
   public users: ICardUser[] | null = null;
   public text: string = 'Lista de usuarios';
   public type: string =  'primary';
+  public tasks = [
+    'primer tarea',
+    'segunda tarea',
+    'tercer tarea',
+    'cuarta tarea',
+  ]
 
   constructor(
     private userService: UserService
