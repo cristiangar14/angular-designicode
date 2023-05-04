@@ -15,8 +15,8 @@
     <div class="col-12">
       <h1>Lista de tareas</h1>
     </div>
-    <div class="col-12" *ngFor="let task of tasks; ">
-      <h2>Tarea numero</h2>
+    <div class="col-12" *ngFor="let task of tasks; index as i; ">
+      <h2>{{task.title}} - {{i}}</h2>
     </div>
   </div>
   <!-- ------------------------------------

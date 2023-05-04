@@ -16,7 +16,7 @@ export class UserListComponent{
   public users: ICardUser[] | null = null;
   public text: string = 'Lista de usuarios';
   public type: string =  'primary';
-  public tasks = [
+  public tasks:{title:string}[] = [
     {
       title: 'primer tarea',
     },
@@ -29,8 +29,6 @@ export class UserListComponent{
     {
       title: 'cuarta tarea',
     },
-
-
   ]
 
   constructor(
