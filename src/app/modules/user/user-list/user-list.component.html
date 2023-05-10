@@ -3,8 +3,11 @@
     <app-title-h1 text="Lista de usuarios"></app-title-h1>
   </div>
   <ng-container *ngIf="users; else elseUsersLoader" >
-    <app-card-user [data]="user" *ngFor="let user of users" class="col-12 col-md-6 col-xl-3"></app-card-user>
+    <app-card-user [data]="user" *ngFor="let user of users; trackby: trackByUserId " class="col-12 col-md-6 col-xl-3"></app-card-user>
   </ng-container>
+  <div class="col-12">
+    <button class="btn btn-primary mt-3 ml-3" (click)="newUser()">Agregar usuario</button>
+  </div>
   <!-- ------------------------------------
     Init loader of card user
     -------------------------------- -->
@@ -15,21 +18,27 @@
     <div class="col-12">
       <h1>Lista de tareas</h1>
     </div>
-    <div class="col-12" *ngFor="let task of tasks; index as i; ">
+    <div class="col-12" *ngFor="let task of tasks; index as i;">
       <h2>#{{i + 1}} - {{task.title}}</h2>
     </div>
   </div>
   <!-- ------------------------------------
     end loader of card user
     -------------------------------- -->
-    <div class="row">
+  <!-- ------------------------------------
+    last and first
+    -------------------------------- -->
+    <!-- <div class="row">
       <div class="col-12">
         <h1>Opciones de dias</h1>
       </div>
       <div class="col-12" *ngFor="let option of options; first as isFirst; last as isLast;">
         <h2>{{option}} {{isFirst || isLast ? 'dia': 'dias'}}</h2>
       </div>
-    </div>
+    </div> -->
+  <!-- ------------------------------------
+    end last and first
+    -------------------------------- -->
 </div>
 <div class="container-fluid px-0">
   <div class="row bg-dark h-100">
