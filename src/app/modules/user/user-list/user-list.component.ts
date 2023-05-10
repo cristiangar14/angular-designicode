@@ -31,6 +31,17 @@ export class UserListComponent{
     },
   ]
 
+  public options = [
+    'un',
+    'dos',
+    'tres',
+    'cuatro',
+    'cinco',
+    'doce',
+    'veinte',
+    'ninguno'
+  ]
+
   constructor(
     private userService: UserService
   ){

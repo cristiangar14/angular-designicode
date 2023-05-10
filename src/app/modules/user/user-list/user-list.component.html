@@ -22,6 +22,14 @@
   <!-- ------------------------------------
     end loader of card user
     -------------------------------- -->
+    <div class="row">
+      <div class="col-12">
+        <h1>Opciones de dias</h1>
+      </div>
+      <div class="col-12" *ngFor="let option of options; first as isFirst; last as isLast;">
+        <h2>{{option}} {{isFirst || isLast ? 'dia': 'dias'}}</h2>
+      </div>
+    </div>
 </div>
 <div class="container-fluid px-0">
   <div class="row bg-dark h-100">
