@@ -65,6 +65,7 @@ export class UserListComponent{
       name: "Cristian",
       age: 31,
       description: "Desarrollador Frontend",
+      gender:'',
       work: "Proyect Manager"
     })
   }
