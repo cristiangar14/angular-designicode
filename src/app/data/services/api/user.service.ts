@@ -22,6 +22,12 @@ export class UserService extends ApiClass {
         map(
           (r: ICardUser[]) => {
             response.data = r;
+            r.map((i:ICardUser) => {
+              if(i.gender === '' || i.gender === null){
+                i.gender = 'S/N';
+              }
+
+            });
             return response;
           }
         ),
