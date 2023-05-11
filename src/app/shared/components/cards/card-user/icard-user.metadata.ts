@@ -4,5 +4,6 @@ export interface ICardUser{
   name: string;
   age: number;
   description: string;
+  gender:string;
   work?:string;
 }
